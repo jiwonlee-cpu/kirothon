@@ -5,3 +5,15 @@ node_modules/
 .env
 dist/
 uploads/
+
+# Kiro MCP 설정 (API 키 포함)
+.kiro/settings/mcp.json
+
+# 환경 변수 및 키 파일
+*.key
+*.pem
+.env.*
+.env.local
+
+# Superpowers brainstorm 세션
+.superpowers/

@@ -4,6 +4,7 @@
  * 실행: npm run seed (또는 npx tsx server/src/seed-demo.ts)
  */
 import bcrypt from 'bcrypt';
+import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
 import { initializeDatabase } from './db.js';
 
@@ -44,31 +45,42 @@ async function seed() {
     console.log('✅ Onboardee 계정 생성: newbie@demo.com / newbie123');
   }
 
-  // 3. HR 섬의 모든 미션에 대해 mission_progress 생성
-  const hrIsland = db.prepare("SELECT id FROM islands WHERE slug = 'hr'").get() as { id: string } | undefined;
-  if (!hrIsland) {
-    console.error('❌ HR 섬을 찾을 수 없습니다.');
-    db.close();
-    return;
-  }
-
-  const missions = db.prepare('SELECT id, title FROM missions WHERE island_id = ? AND is_active = 1').all(hrIsland.id) as Array<{ id: string; title: string }>;
+  // 3. 모든 섬의 미션에 대해 mission_progress 생성
+  const allIslands = db.prepare('SELECT id, name FROM islands ORDER BY sort_order').all() as Array<{ id: string; name: string }>;
 
   const existingProgress = db.prepare('SELECT mission_id FROM mission_progress WHERE onboardee_id = ?').all(onboardeeId) as Array<{ mission_id: string }>;
   const existingMissionIds = new Set(existingProgress.map((p) => p.mission_id));
 
-  let created = 0;
-  for (const mission of missions) {
-    if (!existingMissionIds.has(mission.id)) {
-      db.prepare(
-        `INSERT INTO mission_progress (id, onboardee_id, mission_id, status, requirement, updated_at)
-         VALUES (?, ?, ?, 'not_started', 'required', datetime('now'))`
-      ).run(uuidv4(), onboardeeId, mission.id);
-      created++;
+  // onboarding-missions.json에서 requirement 정보 로드
+  const missionsJsonPath = new URL('../../client/onboarding-data/onboarding-missions.json', import.meta.url);
+  const missionsData = JSON.parse(fs.readFileSync(missionsJsonPath, 'utf-8'));
+  const requirementMap = new Map<string, string>();
+  for (const island of missionsData.islands) {
+    for (const m of island.missions) {
+      requirementMap.set(m.title, m.requirement || 'required');
     }
   }
 
-  console.log(`✅ HR 섬 미션 ${missions.length}개 중 ${created}개 progress 생성 (required)`);
+  let totalCreated = 0;
+  for (const island of allIslands) {
+    const missions = db.prepare('SELECT id, title FROM missions WHERE island_id = ? AND is_active = 1').all(island.id) as Array<{ id: string; title: string }>;
+
+    let created = 0;
+    for (const mission of missions) {
+      if (!existingMissionIds.has(mission.id)) {
+        const requirement = requirementMap.get(mission.title) || 'required';
+        db.prepare(
+          `INSERT INTO mission_progress (id, onboardee_id, mission_id, status, requirement, updated_at)
+           VALUES (?, ?, ?, 'not_started', ?, datetime('now'))`
+        ).run(uuidv4(), onboardeeId, mission.id, requirement);
+        created++;
+      }
+    }
+    totalCreated += created;
+    console.log(`✅ ${island.name} 미션 ${missions.length}개 중 ${created}개 progress 생성`);
+  }
+
+  console.log(`✅ 전체 ${totalCreated}개 미션 progress 생성 완료`);
 
   console.log('\n🎉 데모 시드 완료!');
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');

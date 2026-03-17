@@ -190,7 +190,10 @@ export default function MissionPage() {
 
             {/* Content area */}
             <div style={dialogBox}>
-              {mission.type === 'info' && (
+              {mission.type === 'info' && mission.content?.quizzes && (
+                <QuizMission content={mission.content} onComplete={completeMission} />
+              )}
+              {mission.type === 'info' && !mission.content?.quizzes && (
                 <InfoMission content={mission.content} onComplete={completeMission} />
               )}
               {mission.type === 'task' && (
@@ -665,6 +668,151 @@ function DialogueLine({ text }: { text: string }) {
     <div style={{ fontSize: 15, color: '#303030', lineHeight: 1.7 }}>
       {displayed}
       {!done && <span style={{ animation: 'bounceArr 600ms ease-in-out infinite' }}>|</span>}
+    </div>
+  );
+}
+
+/* ─── Quiz Mission (다중 퀴즈) ─── */
+function QuizMission({ content, onComplete }: { content: any; onComplete: () => void }) {
+  const quizzes: Array<{ question: string; options: string[]; correctIndex: number; explanation: string }> = content?.quizzes || [];
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+  const [answered, setAnswered] = useState(false);
+  const [correctCount, setCorrectCount] = useState(0);
+  const [finished, setFinished] = useState(false);
+
+  if (quizzes.length === 0) return <p style={{ color: '#303030' }}>퀴즈가 없습니다.</p>;
+
+  const quiz = quizzes[currentIdx];
+
+  const handleNext = () => {
+    if (selectedAnswer === quiz.correctIndex) setCorrectCount(c => c + 1);
+    if (currentIdx < quizzes.length - 1) {
+      setCurrentIdx(i => i + 1);
+      setSelectedAnswer(null);
+      setAnswered(false);
+    } else {
+      setFinished(true);
+    }
+  };
+
+  if (finished) {
+    const finalCorrect = correctCount + (selectedAnswer === quiz.correctIndex ? 1 : 0);
+    return (
+      <div style={{ textAlign: 'center', animation: 'popIn 400ms cubic-bezier(0.34,1.56,0.64,1)' }}>
+        <div style={{ fontSize: 56, marginBottom: 12 }}>🎉</div>
+        <div style={{ fontSize: 20, color: '#303030', fontWeight: 'bold', marginBottom: 8 }}>퀴즈 완료!</div>
+        <div style={{ fontSize: 16, color: '#484848', marginBottom: 20 }}>
+          {quizzes.length}문제 중 {finalCorrect}문제 정답!
+        </div>
+        <button onClick={onComplete} style={{ ...btnStyle, background: 'linear-gradient(135deg, #22C55E, #BBF7D0)' }}>
+          🏅 미션 완료!
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      {/* 진행 표시 */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+        <span style={{ fontSize: 12, color: '#484848', fontWeight: 'bold' }}>
+          🧠 퀴즈 {currentIdx + 1} / {quizzes.length}
+        </span>
+        <div style={{ display: 'flex', gap: 4 }}>
+          {quizzes.map((_, i) => (
+            <div key={i} style={{
+              width: 8, height: 8, borderRadius: '50%',
+              background: i === currentIdx ? '#3B82F6' : i < currentIdx ? '#22C55E' : '#D1D5DB',
+              border: '1px solid #484848',
+            }} />
+          ))}
+        </div>
+      </div>
+
+      {/* 질문 */}
+      <div style={{
+        background: 'linear-gradient(135deg, #FEF3C7, #FDE68A)',
+        border: '3px solid #F59E0B', borderRadius: 12,
+        padding: '16px 20px', marginBottom: 20,
+        boxShadow: '0 0 0 2px #181818',
+      }}>
+        <div style={{ fontSize: 16, color: '#303030', fontWeight: 'bold', lineHeight: 1.6 }}>{quiz.question}</div>
+      </div>
+
+      {/* 보기 */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
+        {quiz.options.map((option: string, i: number) => {
+          const isCorrect = i === quiz.correctIndex;
+          const isSelected = selectedAnswer === i;
+          let bg = '#F8F8F8';
+          let borderColor = '#484848';
+
+          if (answered) {
+            if (isCorrect) { bg = '#DCFCE7'; borderColor = '#22C55E'; }
+            else if (isSelected && !isCorrect) { bg = '#FEE2E2'; borderColor = '#EF4444'; }
+          } else if (isSelected) { bg = '#E0F2FE'; borderColor = '#3B82F6'; }
+
+          return (
+            <button key={i} onClick={() => { if (!answered) setSelectedAnswer(i); }} disabled={answered}
+              style={{
+                display: 'flex', alignItems: 'center', gap: 12,
+                padding: '14px 18px', border: `3px solid ${borderColor}`, borderRadius: 10,
+                background: bg, fontFamily: "'DotGothic16', monospace", fontSize: 15,
+                color: '#303030', cursor: answered ? 'default' : 'pointer',
+                textAlign: 'left', width: '100%', transition: 'all 150ms ease',
+              }}>
+              <div style={{
+                width: 32, height: 32, borderRadius: '50%', flexShrink: 0,
+                border: `2px solid ${borderColor}`,
+                background: isSelected ? (answered ? (isCorrect ? '#22C55E' : '#EF4444') : '#3B82F6') : '#D1D5DB',
+                color: isSelected ? '#fff' : '#484848',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontSize: 14, fontWeight: 'bold',
+              }}>
+                {answered && isCorrect ? '✓' : answered && isSelected && !isCorrect ? '✗' : i + 1}
+              </div>
+              <span>{option}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* 정답 확인 */}
+      {!answered && selectedAnswer !== null && (
+        <div style={{ textAlign: 'center' }}>
+          <button onClick={() => setAnswered(true)} style={{
+            ...btnStyle, background: 'linear-gradient(135deg, #FACC15, #F59E0B)',
+          }}>정답 확인!</button>
+        </div>
+      )}
+
+      {/* 결과 + 다음 */}
+      {answered && (
+        <div style={{ animation: 'popIn 400ms cubic-bezier(0.34,1.56,0.64,1)' }}>
+          <div style={{
+            background: selectedAnswer === quiz.correctIndex
+              ? 'linear-gradient(135deg, #DCFCE7, #BBF7D0)'
+              : 'linear-gradient(135deg, #FEE2E2, #FECACA)',
+            border: `3px solid ${selectedAnswer === quiz.correctIndex ? '#22C55E' : '#EF4444'}`,
+            borderRadius: 12, padding: '16px 20px', marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 20, marginBottom: 8 }}>
+              {selectedAnswer === quiz.correctIndex ? '🎉 정답!' : '😅 아쉬워요!'}
+            </div>
+            <div style={{ fontSize: 14, color: '#303030', lineHeight: 1.7 }}>{quiz.explanation}</div>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <button onClick={handleNext} style={{
+              ...btnStyle, background: currentIdx < quizzes.length - 1
+                ? 'linear-gradient(135deg, #3B82F6, #60A5FA)'
+                : 'linear-gradient(135deg, #22C55E, #BBF7D0)',
+            }}>
+              {currentIdx < quizzes.length - 1 ? '다음 퀴즈 →' : '🏅 미션 완료!'}
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

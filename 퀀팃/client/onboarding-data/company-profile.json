@@ -1,0 +1,126 @@
+{
+  "company": {
+    "name": "Quantit",
+    "name_ko": "퀀팃",
+    "legal_name": "(주)퀀팃",
+    "business_number": "572-81-01333",
+    "website": "https://quantit.ai/ko",
+    "description": "퀀팃은 AI 기반의 금융투자 데이터 분석 및 투자 솔루션을 제공합니다.",
+    "tagline": "상상 속 투자 아이디어를 현실로 만들어 드려요",
+    "sub_tagline": "AI가 분석·백테스트·전략 구현·자동매매까지 모든 과정을 하나로 연결해, 아이디어가 성과로 이어질 수 있도록 지원합니다.",
+    "address": {
+      "headquarters": "서울시 영등포구 여의대로 14, KT빌딩 (본사 여의도 오피스)",
+      "research": "성남시 분당구 판교역로 180, 알파타워 (기술연구소 판교 오피스)"
+    },
+    "contact": {
+      "general": "info@quantit.ai",
+      "recruiting": "talent@quantit.ai"
+    },
+    "social": {
+      "blog": "https://blog.naver.com/quantit_io",
+      "linkedin": "https://www.linkedin.com/company/quantit-co/",
+      "youtube": "https://www.youtube.com/channel/UCLNdA9LhwVuFfaFDt85KGwA"
+    },
+    "ceo": "한덕희"
+  },
+  "branding": {
+    "logo_url": "https://quantit.ai/images/quantit_logo.png",
+    "favicon": "https://quantit.ai/favicon/favicon-96x96.png",
+    "colors": {
+      "primary": "#296DFF",
+      "primary_light": "#3387FF",
+      "background_dark": "#151926",
+      "text_white": "#FFFFFF",
+      "text_gray": "#9CA3AF",
+      "cta_bg": "rgba(41, 109, 255, 0.1)",
+      "cta_border": "rgba(41, 109, 255, 0.3)"
+    },
+    "style": "다크 테마 기반, 미니멀하고 프로페셔널한 핀테크 디자인"
+  },
+  "pages": {
+    "home": {
+      "url": "https://quantit.ai/ko",
+      "summary": "AI 기반 투자 솔루션 소개. 금융공학과 AI 기술로 전문가 수준의 투자 실현. FINTER 플랫폼(Data, Portfolio, Trading) 소개. 개인 투자자/금융기관 대상 서비스 안내."
+    },
+    "solutions": {
+      "url": "https://quantit.ai/ko/solutions",
+      "summary": "3개 주요 서비스: 핀터(FINTER, AI 투자 플랫폼), 머니터링(AI 투자 브리핑), 플랜팃(AI 자산관리). 20개 이상 고객사 및 5개 파트너 기관 소개."
+    },
+    "careers": {
+      "url": "https://quantit.ai/ko/careers",
+      "summary": "팀 인터뷰(CEO, 투자전략모델팀), 6명 팀원 인터뷰, 오피스 투어(여의도/판교), 채용 공고(마케팅, 프론트엔드, 플랫폼 엔지니어). 사내 AI 챗봇 '캡틴큐' 소개."
+    },
+    "contact": {
+      "url": "https://quantit.ai/ko/contact",
+      "summary": "문의 폼(이름, 이메일, 내용). 본사 여의도 + 기술연구소 판교 주소. 24시간 이내 답변."
+    }
+  },
+  "services": {
+    "core_platform": "FINTER",
+    "products": [
+      {
+        "name": "핀터 (FINTER)",
+        "description": "투자 아이디어를 전략으로, 전략을 실제 투자로 연결하는 AI 플랫폼",
+        "details": "글로벌 금융 데이터 통합, 백테스트, 포트폴리오 최적화, 자동매매 전 과정 지원. 밀리초 단위 고빈도 트레이딩부터 장기 가치 투자까지 지원.",
+        "url": "https://finter.quantit.io/"
+      },
+      {
+        "name": "머니터링",
+        "description": "AI가 매일 제공하는 나만의 투자 브리핑",
+        "details": "AI가 나에게 맞는 투자 뉴스만 골라 브리핑",
+        "url": "https://www.moneytoring.ai/"
+      },
+      {
+        "name": "플랜팃",
+        "description": "AI와 함께 꾸준히 키우는 자산관리",
+        "details": "자동 리밸런싱으로 시장 변화에 대응, 배당과 수익을 꾸준히 축적",
+        "url": "http://plantit.it/"
+      }
+    ],
+    "pillars": [
+      { "name": "Data", "description": "신뢰할 수 있는 금융 데이터와 투자 정보" },
+      { "name": "Portfolio", "description": "AI 분석과 전략으로 설계되는 포트폴리오" },
+      { "name": "Trading", "description": "자동화된 주문과 체계적인 리스크 관리" }
+    ],
+    "target_segments": [
+      {
+        "segment": "개인 투자자",
+        "service": "AI 투자 서비스",
+        "description": "AI로 분석한 투자 인사이트부터 개인 맞춤형 투자 판단, 자동화 솔루션까지"
+      },
+      {
+        "segment": "금융기관",
+        "service": "AI 투자 핀테크 솔루션",
+        "description": "금융 데이터와 투자 모델부터 포트폴리오, 트레이딩 시스템, AI 기반 금융 R&D 플랫폼까지"
+      }
+    ]
+  },
+  "clients": [
+    { "name": "국민연금공단", "service": "다중 금융 AI 모델", "region": "KR" },
+    { "name": "KB금융그룹", "service": "다이렉트 인덱싱 솔루션", "region": "KR" },
+    { "name": "우리금융그룹", "service": "AI 금융상품", "region": "KR" },
+    { "name": "신한은행", "service": "AI 투자 테마 포트폴리오", "region": "KR" },
+    { "name": "SK텔레콤", "service": "투자 시그널 정보 솔루션", "region": "KR" },
+    { "name": "삼성자산운용", "service": "금융 리스크 조기경보 시스템", "region": "KR" },
+    { "name": "한화자산운용", "service": "금융 리스크 조기경보 시스템", "region": "KR" },
+    { "name": "NH헷지자산운용", "service": "바젤 III 기준 FRTB 평가 엔진", "region": "KR" },
+    { "name": "스마일게이트자산운용", "service": "포트폴리오 트레이딩 시스템", "region": "KR" },
+    { "name": "한국투자증권", "service": "AI 금융상품", "region": "KR" },
+    { "name": "KB증권", "service": "기관고객용 포트폴리오 트레이딩 시스템", "region": "KR" },
+    { "name": "신한증권", "service": "고액자산가를 위한 자산관리 솔루션", "region": "KR" },
+    { "name": "교보증권", "service": "ETF LP 알고리즘 운영 미니원장 시스템", "region": "KR" },
+    { "name": "BNK금융그룹", "service": "AI 금융상품", "region": "KR" },
+    { "name": "원자산운용", "service": "AI 금융상품", "region": "KR" },
+    { "name": "CK 골디락스자산운용", "service": "HFT 주문 전략 시스템", "region": "KR" },
+    { "name": "Shinhan Securities Vietnam", "service": "베트남 AI 금융상품", "region": "VN" },
+    { "name": "ASAM Securities", "service": "베트남 AI 금융상품", "region": "VN" },
+    { "name": "Bareksa", "service": "인도네시아 AI 금융상품", "region": "ID" },
+    { "name": "QiCap", "service": "인도 AI 금융상품", "region": "IN" }
+  ],
+  "partners": [
+    { "name": "KAIST", "focus": "금융공학 모델 연구", "region": "KR" },
+    { "name": "SNU (서울대)", "focus": "금융공학 모델 연구", "region": "KR" },
+    { "name": "NYU Stern", "focus": "금융투자 AI Agent 연구", "region": "US" },
+    { "name": "Difisoft", "focus": "베트남 금융투자 솔루션", "region": "VN" },
+    { "name": "Navisoft", "focus": "베트남 금융투자 솔루션", "region": "VN" }
+  ],

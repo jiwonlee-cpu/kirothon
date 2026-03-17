@@ -1,0 +1,381 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "generatedAt": "2026-03-17",
+    "source": ["company-profile.json", "confluence-extract.json"],
+    "company": "퀀팃 (Quantit)"
+  },
+  "islands": [
+    {
+      "id": "hr",
+      "name": "HR 섬",
+      "slug": "hr",
+      "description": "퀀팃 문화와 근무환경을 알아보는 첫 번째 섬이에요.",
+      "icon": "🏢",
+      "sort_order": 1,
+      "missions": [
+        {
+          "title": "퀀팃은 어떤 회사일까?",
+          "description": "AI 기반 금융투자 솔루션 기업 퀀팃의 미션과 비전을 알아보세요.",
+          "type": "info",
+          "sort_order": 1,
+          "requirement": "required",
+          "content": {
+            "blocks": [
+              {
+                "type": "text",
+                "body": "## 🏢 퀀팃 소개\n\n퀀팃은 AI 기반의 금융투자 데이터 분석 및 투자 솔루션을 제공하는 기업입니다.\n\n### 슬로건\n**\"상상 속 투자 아이디어를 현실로 만들어 드려요\"**\n\nAI가 분석·백테스트·전략 구현·자동매매까지 모든 과정을 하나로 연결해, 아이디어가 성과로 이어질 수 있도록 지원합니다.\n\n### 오피스 위치\n- 본사(여의도): 서울시 영등포구 여의대로14, KT여의도타워 13층/16층\n- 기술연구소(판교): 경기도 성남시 분당구 판교역로 180, 알파타워 402호\n- 세종 오피스: 세종특별자치시 집현동 1132, VAIV 사옥 5층\n\n### 주요 고객사\n국민연금공단, KB금융그룹, 우리금융그룹, 신한은행, SK텔레콤, 삼성자산운용 등 20개 이상의 금융기관과 협력하고 있습니다.\n\n### 연구 파트너\nKAIST, 서울대, NYU Stern 등과 금융공학 및 AI 연구를 진행하고 있습니다."
+              }
+            ]
+          }
+        },
+        {
+          "title": "퀀팃 근무제도 마스터하기",
+          "description": "공통 집중 근무시간, 원격근무 등 퀀팃의 근무제도를 퀴즈로 확인해보세요.",
+          "type": "quiz",
+          "sort_order": 2,
+          "requirement": "required",
+          "content": {
+            "quizzes": [
+              {
+                "question": "퀀팃의 공통 집중 근무시간은?",
+                "options": ["9시~18시", "10시~16시", "8시~17시", "10시~19시"],
+                "correctIndex": 1,
+                "explanation": "퀀팃은 10시부터 16시까지 공통 집중 근무시간입니다. 전후로 자유롭게 근무합니다."
+              },
+              {
+                "question": "퀀팃에서 원격근무는 주 최대 며칠 가능한가요?",
+                "options": ["1일", "2일", "3일", "5일"],
+                "correctIndex": 1,
+                "explanation": "주 최대 2일 원격근무가 가능합니다. 입사 첫 1개월은 주 5일 오피스 근무가 원칙이에요."
+              },
+              {
+                "question": "입사 후 첫 1개월 동안의 근무 원칙은?",
+                "options": ["주 3일 출근", "주 5일 오피스 근무", "자유 원격근무", "격주 출근"],
+                "correctIndex": 1,
+                "explanation": "입사 후 1개월은 주 5일 오피스 근무가 원칙입니다. 이후부터 원격근무를 활용할 수 있어요."
+              }
+            ]
+          }
+        },
+        {
+          "title": "퀀팃 문화 퀴즈",
+          "description": "사내 호칭제도와 계정/툴 관련 퀴즈를 풀어보세요.",
+          "type": "quiz",
+          "sort_order": 3,
+          "requirement": "required",
+          "content": {
+            "quizzes": [
+              {
+                "question": "퀀팃에서 대표이사를 부를 때 올바른 호칭은?",
+                "options": ["한 대표님", "대표님", "덕희님", "한덕희 사장님"],
+                "correctIndex": 2,
+                "explanation": "퀀팃은 '님' 문화로, 직책 대신 이름 뒤에 '님'을 붙입니다. 덕희님이 맞아요!"
+              },
+              {
+                "question": "퀀팃에서 계정/툴 관련 요청은 어디서 하나요?",
+                "options": ["이메일로 HR팀에 요청", "Slack [그룹웨어-내부서비스-요청-문의] 채널", "Jira 티켓 생성", "직접 IT팀 방문"],
+                "correctIndex": 1,
+                "explanation": "Slack의 [그룹웨어-내부서비스-요청-문의] 채널에서 IT 담당자에게 요청하면 됩니다."
+              }
+            ]
+          }
+        },
+        {
+          "title": "오피스 & 근무환경 퀴즈",
+          "description": "퀀팃 오피스 위치와 회의실 예약 방법을 확인해보세요.",
+          "type": "quiz",
+          "sort_order": 4,
+          "requirement": "required",
+          "content": {
+            "quizzes": [
+              {
+                "question": "퀀팃 본사는 어느 건물에 있나요?",
+                "options": ["판교 알파타워", "KT여의도타워", "강남 테헤란로 빌딩", "광화문 D타워"],
+                "correctIndex": 1,
+                "explanation": "퀀팃 본사는 여의도 KT여의도타워 13층과 16층에 있습니다."
+              },
+              {
+                "question": "퀀팃 기술연구소는 어디에 있나요?",
+                "options": ["여의도", "판교", "강남", "세종"],
+                "correctIndex": 1,
+                "explanation": "기술연구소는 판교 알파타워 402호에 있습니다."
+              },
+              {
+                "question": "퀀팃에서 회의실을 예약하는 방법은?",
+                "options": ["Slack에서 봇으로 예약", "구글캘린더에서 회의실 리소스 추가", "이메일로 총무팀에 요청", "회의실 앞 태블릿에서 직접 예약"],
+                "correctIndex": 1,
+                "explanation": "구글캘린더에서 일정을 등록할 때 회의실 리소스를 추가하면 됩니다."
+              }
+            ]
+          }
+        },
+        {
+          "title": "공용 계정 & 툴 설정하기",
+          "description": "입사 시 필요한 계정과 툴을 설정하세요.",
+          "type": "task",
+          "sort_order": 5,
+          "requirement": "required",
+          "content": {
+            "steps": [
+              { "id": "s1", "title": "Slack 가입 및 채널 참여", "description": "회사 Slack 워크스페이스에 가입하고, 주요 채널(#general, #그룹웨어-내부서비스-요청-문의)에 참여하세요." },
+              { "id": "s2", "title": "Google Workspace 설정", "description": "회사 이메일(@quantit.io)로 Google Workspace에 로그인하고 프로필을 설정하세요." },
+              { "id": "s3", "title": "Confluence/Jira 접속 확인", "description": "Confluence와 Jira에 접속하여 '슬기로운 퀀팃생활' 페이지를 확인하세요." },
+              { "id": "s4", "title": "더존 그룹웨어 가입", "description": "더존 그룹웨어에 가입하고 기본 설정을 완료하세요." },
+              { "id": "s5", "title": "Zoom 계정 설정", "description": "회사 Zoom 계정으로 로그인하고 프로필을 설정하세요." }
+            ]
+          }
+        },
+        {
+          "title": "오피스 환경 세팅하기",
+          "description": "프린터 연결, 사물함 설정 등 오피스 환경을 세팅하세요.",
+          "type": "task",
+          "sort_order": 6,
+          "requirement": "optional",
+          "content": {
+            "steps": [
+              { "id": "s1", "title": "프린터 드라이버 설치", "description": "여의도 13층: 192.168.0.160 / 판교: 192.168.0.150 으로 프린터 드라이버를 설치하세요." },
+              { "id": "s2", "title": "스캐너 개인 박스 등록", "description": "복합기에서 개인 박스를 등록하세요. 스캔 자료는 최대 7일 보관됩니다." },
+              { "id": "s3", "title": "사물함 비밀번호 변경", "description": "초기 비밀번호 1234에서 변경하세요. '0'번 3초 길게 누르기 → 새 4자리 입력 → 전원버튼" },
+              { "id": "s4", "title": "명함 정보 확인", "description": "온보딩 때 경영지원 담당자가 명함 제작 신청을 받습니다. 영문 이름/직책을 미리 준비하세요." }
+            ]
+          }
+        },
+        {
+          "title": "백엔드 개발자 장지창님과 대화해보기",
+          "description": "머니터링 본부의 백엔드 개발자 장지창님을 만나보세요!",
+          "type": "communication",
+          "sort_order": 7,
+          "requirement": "required",
+          "content": {
+            "npc": {
+              "name": "장지창",
+              "emoji": "👨‍💻",
+              "color": "blue",
+              "team": "머니터링 본부",
+              "position": "백엔드 개발자",
+              "bio": "머니터링 본부에서 백엔드 개발자로 일하고 있는 장지창님이에요! 성격은 INTJ. 맛집 탐험을 좋아합니다!",
+              "tags": ["INTJ", "맛집탐험", "백엔드"]
+            },
+            "dialogue": [
+              "안녕하세요! 저는 머니터링 본부의 백엔드 개발자 장지창입니다.",
+              "머니터링은 AI가 매일 제공하는 나만의 투자 브리핑 서비스예요. 나에게 맞는 투자 뉴스만 골라 브리핑해줍니다.",
+              "저는 맛있는 음식 찾아다니는 걸 좋아해요. 특히 치킨을 정말 좋아합니다!",
+              "지창님과 음식 취향에 대해서 얘기해보고 퀴즈를 풀어볼까요?"
+            ],
+            "quiz": {
+              "question": "지창님이 제일 좋아하는 치킨 브랜드는?",
+              "options": ["네네치킨", "교촌치킨", "BHC", "푸라닭치킨"],
+              "correctIndex": 1,
+              "explanation": "교촌치킨은 순살만 시켜도 닭다리로 조리하기 때문에 좋아해요! 지창님의 원픽은 교촌 허니콤보 순살이랍니다. 🍗"
+            },
+            "activityDescription": "장지창님을 찾아가서 인사하고 퀴즈를 풀어보세요!",
+            "requiredEvidence": "quiz"
+          }
+        },
+        {
+          "title": "디자이너 박소연님과 대화해보기",
+          "description": "플랜팃 본부의 프로덕트 디자이너 박소연님을 만나보세요!",
+          "type": "communication",
+          "sort_order": 8,
+          "requirement": "required",
+          "content": {
+            "npc": {
+              "name": "박소연",
+              "emoji": "👩‍🎨",
+              "color": "green",
+              "team": "플랜팃 본부",
+              "position": "프로덕트 디자이너",
+              "bio": "플랜팃 본부에서 프로덕트 디자이너로 일하고 있는 박소연님이에요! 성격은 ENFP. 고양이 두 마리를 키우고 있어요!",
+              "tags": ["ENFP", "고양이집사", "UI/UX"]
+            },
+            "dialogue": [
+              "안녕하세요~ 플랜팃 본부 디자이너 박소연이에요!",
+              "플랜팃은 AI와 함께 꾸준히 키우는 자산관리 서비스예요. 자동 리밸런싱으로 시장 변화에 대응하죠.",
+              "저는 고양이 두 마리를 키우고 있어요. 이름은 모찌랑 콩이!",
+              "소연님의 고양이에 대해 퀴즈를 풀어볼까요?"
+            ],
+            "quiz": {
+              "question": "소연님의 고양이 모찌의 품종은?",
+              "options": ["러시안블루", "브리티시숏헤어", "스코티시폴드", "먼치킨"],
+              "correctIndex": 2,
+              "explanation": "모찌는 귀가 접힌 스코티시폴드예요! 동글동글한 얼굴이 모찌를 닮아서 이름을 모찌로 지었대요. 🐱"
+            },
+            "activityDescription": "박소연님을 찾아가서 인사하고 퀴즈를 풀어보세요!",
+            "requiredEvidence": "quiz"
+          }
+        }
+      ]
+    },
+    {
+      "id": "monitoring",
+      "name": "머니터링 섬",
+      "slug": "monitoring",
+      "description": "AI 투자 브리핑 서비스 머니터링을 알아보는 섬이에요.",
+      "icon": "📊",
+      "sort_order": 2,
+      "missions": [
+        {
+          "title": "머니터링이란?",
+          "description": "AI가 매일 제공하는 나만의 투자 브리핑, 머니터링을 알아보세요.",
+          "type": "info",
+          "sort_order": 1,
+          "requirement": "required",
+          "content": {
+            "blocks": [
+              {
+                "type": "text",
+                "body": "## 📊 머니터링 (Moneytoring)\n\n**AI가 매일 제공하는 나만의 투자 브리핑**\n\nAI가 나에게 맞는 투자 뉴스만 골라 브리핑해주는 서비스입니다.\n\n### 주요 기능\n- 개인 맞춤형 투자 뉴스 큐레이션\n- AI 기반 시장 분석 브리핑\n- 관심 종목 실시간 알림\n\n### 서비스 링크\nhttps://www.moneytoring.ai/\n\n### 대상 고객\n개인 투자자를 위한 AI 투자 인사이트 서비스입니다."
+              }
+            ]
+          }
+        },
+        {
+          "title": "머니터링 퀴즈",
+          "description": "머니터링 서비스에 대해 얼마나 알고 있는지 확인해보세요.",
+          "type": "quiz",
+          "sort_order": 2,
+          "requirement": "required",
+          "content": {
+            "quizzes": [
+              {
+                "question": "머니터링의 핵심 기능은 무엇인가요?",
+                "options": ["자동 주식 매매", "AI 맞춤형 투자 브리핑", "포트폴리오 리밸런싱", "금융 데이터 수집"],
+                "correctIndex": 1,
+                "explanation": "머니터링은 AI가 나에게 맞는 투자 뉴스만 골라 매일 브리핑해주는 서비스입니다."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "planit",
+      "name": "플랜팃 섬",
+      "slug": "planit",
+      "description": "AI 자산관리 서비스 플랜팃을 알아보는 섬이에요.",
+      "icon": "🌱",
+      "sort_order": 3,
+      "missions": [
+        {
+          "title": "플랜팃이란?",
+          "description": "AI와 함께 꾸준히 키우는 자산관리, 플랜팃을 알아보세요.",
+          "type": "info",
+          "sort_order": 1,
+          "requirement": "required",
+          "content": {
+            "blocks": [
+              {
+                "type": "text",
+                "body": "## 🌱 플랜팃 (Plantit)\n\n**AI와 함께 꾸준히 키우는 자산관리**\n\n자동 리밸런싱으로 시장 변화에 대응하고, 배당과 수익을 꾸준히 축적하는 자산관리 서비스입니다.\n\n### 주요 기능\n- AI 기반 자동 리밸런싱\n- 시장 변화 대응 포트폴리오 관리\n- 배당 및 수익 축적 최적화\n\n### 서비스 링크\nhttp://plantit.it/\n\n### 대상 고객\n장기 자산관리를 원하는 개인 투자자를 위한 서비스입니다."
+              }
+            ]
+          }
+        },
+        {
+          "title": "플랜팃 퀴즈",
+          "description": "플랜팃 서비스에 대해 얼마나 알고 있는지 확인해보세요.",
+          "type": "quiz",
+          "sort_order": 2,
+          "requirement": "required",
+          "content": {
+            "quizzes": [
+              {
+                "question": "플랜팃의 핵심 기능은 무엇인가요?",
+                "options": ["투자 뉴스 브리핑", "고빈도 트레이딩", "AI 자동 리밸런싱 자산관리", "금융 데이터 분석"],
+                "correctIndex": 2,
+                "explanation": "플랜팃은 AI 자동 리밸런싱으로 시장 변화에 대응하며 배당과 수익을 꾸준히 축적하는 자산관리 서비스입니다."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "finter",
+      "name": "finter 섬",
+      "slug": "finter",
+      "description": "퀀팃의 핵심 플랫폼 FINTER를 알아보는 섬이에요.",
+      "icon": "💰",
+      "sort_order": 4,
+      "missions": [
+        {
+          "title": "FINTER 플랫폼이란?",
+          "description": "퀀팃의 핵심 AI 투자 플랫폼 FINTER를 알아보세요.",
+          "type": "info",
+          "sort_order": 1,
+          "requirement": "required",
+          "content": {
+            "blocks": [
+              {
+                "type": "text",
+                "body": "## 💰 FINTER\n\n**투자 아이디어를 전략으로, 전략을 실제 투자로 연결하는 AI 플랫폼**\n\n글로벌 금융 데이터 통합, 백테스트, 포트폴리오 최적화, 자동매매 전 과정을 지원합니다.\n밀리초 단위 고빈도 트레이딩부터 장기 가치 투자까지 지원합니다.\n\n### 3대 핵심 축 (Pillars)\n- **Data**: 신뢰할 수 있는 금융 데이터와 투자 정보\n- **Portfolio**: AI 분석과 전략으로 설계되는 포트폴리오\n- **Trading**: 자동화된 주문과 체계적인 리스크 관리\n\n### 서비스 링크\nhttps://finter.quantit.io/\n\n### 대상 고객\n- 개인 투자자: AI 투자 인사이트부터 자동화 솔루션까지\n- 금융기관: 금융 데이터, 투자 모델, 포트폴리오, 트레이딩 시스템, AI 기반 금융 R&D 플랫폼"
+              }
+            ]
+          }
+        },
+        {
+          "title": "FINTER & 퀀팃 서비스 종합 퀴즈",
+          "description": "퀀팃의 3대 서비스와 FINTER 플랫폼에 대한 종합 퀴즈입니다.",
+          "type": "quiz",
+          "sort_order": 2,
+          "requirement": "required",
+          "content": {
+            "quizzes": [
+              {
+                "question": "퀀팃의 핵심 AI 투자 플랫폼 이름은?",
+                "options": ["머니터링", "플랜팃", "FINTER", "캡틴큐"],
+                "correctIndex": 2,
+                "explanation": "FINTER는 투자 아이디어를 전략으로, 전략을 실제 투자로 연결하는 퀀팃의 핵심 AI 플랫폼입니다."
+              },
+              {
+                "question": "FINTER의 3대 핵심 축(Pillar)이 아닌 것은?",
+                "options": ["Data", "Portfolio", "Trading", "Marketing"],
+                "correctIndex": 3,
+                "explanation": "FINTER의 3대 핵심 축은 Data, Portfolio, Trading입니다."
+              },
+              {
+                "question": "퀀팃의 사내 AI 챗봇 이름은?",
+                "options": ["퀀봇", "캡틴큐", "핀터봇", "AI어시스턴트"],
+                "correctIndex": 1,
+                "explanation": "퀀팃의 사내 AI 챗봇 이름은 '캡틴큐'입니다. 채용 페이지에서도 소개되고 있어요!"
+              }
+            ]
+          }
+        },
+        {
+          "title": "PM 김태현님과 대화해보기",
+          "description": "finter 본부의 프로덕트 매니저 김태현님을 만나보세요!",
+          "type": "communication",
+          "sort_order": 3,
+          "requirement": "required",
+          "content": {
+            "npc": {
+              "name": "김태현",
+              "emoji": "👨‍💼",
+              "color": "gold",
+              "team": "finter 본부",
+              "position": "프로덕트 매니저",
+              "bio": "finter 본부에서 PM으로 일하고 있는 김태현님이에요! 성격은 ENTJ. 주말마다 등산을 즐기는 아웃도어파!",
+              "tags": ["ENTJ", "등산러", "PM"]
+            },
+            "dialogue": [
+              "반갑습니다! finter 본부 PM 김태현입니다.",
+              "FINTER는 글로벌 금융 데이터 통합부터 자동매매까지, 투자의 전 과정을 AI로 지원하는 플랫폼이에요.",
+              "저는 주말마다 산에 가요. 서울 근교 산은 거의 다 가봤죠!",
+              "태현님의 등산 취미에 대해 퀴즈를 풀어볼까요?"
+            ],
+            "quiz": {
+              "question": "태현님이 가장 좋아하는 서울 근교 산은?",
+              "options": ["북한산", "관악산", "도봉산", "청계산"],
+              "correctIndex": 0,
+              "explanation": "북한산 백운대 코스를 제일 좋아해요! 정상에서 보는 서울 전경이 최고라고 합니다. ⛰️"
+            },
+            "activityDescription": "김태현님을 찾아가서 인사하고 퀴즈를 풀어보세요!",
+            "requiredEvidence": "quiz"
+          }
+        }
+      ]
+    }
+  ]
+}
