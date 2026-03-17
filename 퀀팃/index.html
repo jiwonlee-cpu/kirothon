@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🏝️ 온보딩 어드벤처</title>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --poke-white: #F8F8F8;
+        --poke-black: #303030;
+        --poke-border: #484848;
+        --poke-border-outer: #181818;
+        --poke-shadow: #A0A0A0;
+        --poke-blue: #3B82F6;
+        --poke-blue-light: #60A5FA;
+        --poke-red: #EF4444;
+        --poke-green: #22C55E;
+        --poke-yellow: #FACC15;
+        --poke-gold: #F59E0B;
+        --poke-bg: #1a1a2e;
+        --dialog-bg: rgba(255,255,255,0.97);
+        --dialog-border: 3px solid var(--poke-border);
+        --dialog-radius: 12px;
+        --dialog-shadow: 0 0 0 3px var(--poke-border-outer), 4px 4px 0 var(--poke-shadow);
+        --font-pixel: 'DotGothic16', monospace;
+        --tr-fast: 150ms ease;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-pixel);
+        background: var(--poke-bg);
+        color: var(--poke-white);
+        min-height: 100vh;
+      }
+      /* Scrollbar */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #16213e; }
+      ::-webkit-scrollbar-thumb { background: #484848; border-radius: 4px; }
+
+      /* Animations */
+      @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+      @keyframes popIn { from{opacity:0;transform:scale(0.5)} to{opacity:1;transform:scale(1)} }
+      @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+      @keyframes bounceArr { 0%,100%{transform:translateY(0)} 50%{transform:translateY(4px)} }
+      @keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+      @keyframes itemBounce { from{transform:translateY(0)} to{transform:translateY(-8px)} }
+      @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+      @keyframes sparkle { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.2)} }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/client/main.tsx"></script>
+  </body>
+</html>
